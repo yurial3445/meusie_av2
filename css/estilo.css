@@ -1,13 +1,186 @@
+/* ==================================== */
+/* === ESTILOS GERAIS E LAYOUT (CSS) === */
+/* ==================================== */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #fff5e9; /* Cor de fundo creme */
+}
+
 body {
-    padding-top: 70px;
+    padding-top: 70px; /* Espaço para a navbar fixa */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-nav{
-    background-color: rgba(255, 245, 233);
-  color: #3e2c23;
-  line-height: 1.6;
+/* Garante que o footer fique sempre na parte inferior */
+footer {
+    margin-top: auto;
 }
 
-.nav-item{
-  background-color: rgb(220, 157, 80);
+/* Corpo principal do conteúdo */
+main {
+    flex: 1; /* Empurra o footer para baixo */
+    background-color: #fff5e9;
+    padding: 1rem 0;
+}
+
+/* Cor do café escuro para o botão (uso da cor da logo) */
+.btn-custom {
+    color: #FFFFFF;
+    background-color: #3e2c23; /* Marrom escuro da logo */
+    border-color: #3e2c23;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    color: #FFFFFF;
+    background-color: #5a4032; /* Um tom um pouco mais claro no hover */
+    border-color: #5a4032;
+}
+
+.btn-custom:focus {
+    box-shadow: 0 0 0 0.25rem rgba(62, 44, 35, 0.5); /* Sombra do foco com a cor principal */
+}
+
+/* Estilização para textos de introdução/destaque */
+#mini-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+/* Título principal do Index */
+#titulo-introdutorio {
+    color: #3e2c23;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* Navbar e Links */
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important; /* Cor de destaque (amarelo Bootstrap) */
+}
+
+/* ==================================== */
+/* === ESTILOS ESPECÍFICOS POR PÁGINA === */
+/* ==================================== */
+
+/* --- Index (Carrossel de Destaque) --- */
+#carousel {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#carousel .carousel-item img {
+    height: 500px; /* Altura padrão para telas maiores */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+/* Responsividade do Carrossel */
+@media (max-width: 992px) {
+    #carousel .carousel-item img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    #carousel .carousel-item img {
+        height: 250px;
+    }
+}
+
+/* --- Contatos (Mapa e Formulário) --- */
+#mapa-localizacao {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    margin-bottom: 2rem;
+}
+
+/* --- História --- */
+#titulo-historia {
+    color: #3e2c23;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0 15px;
+}
+
+.paragrafos-historia {
+    font-size: 1.1rem;
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 0 15px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Responsividade do Título da História */
+@media (max-width: 576px) {
+    #titulo-historia {
+        font-size: 1.8rem;
+    }
+    .navbar-brand {
+        font-size: 1rem; /* Reduz tamanho do texto da logo em telas pequenas */
+    }
+}
+
+/* --- Produto (Cards) --- */
+.card {
+    border: 1px solid rgba(62, 44, 35, 0.1);
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 17px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px; /* Altura fixa para as imagens dos produtos */
+    object-fit: cover;
+    border-top-left-radius: calc(0.5rem - 1px);
+    border-top-right-radius: calc(0.5rem - 1px);
+}
+
+.card-footer {
+    background-color: #fff5e9;
+    border-top: none;
+}
+
+/* Estilo para os headers do Acordeão */
+.accordion-button:not(.collapsed) {
+    color: #FFFFFF;
+    background-color: #3e2c23; /* Cor do café escuro quando aberto */
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    border-color: #3e2c23;
+    box-shadow: 0 0 0 0.25rem rgba(62, 44, 35, 0.5);
+}
+
+/* Estilo para o corpo do Acordeão */
+.accordion-body {
+    background-color: #fff5e9;
 }
