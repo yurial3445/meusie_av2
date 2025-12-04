@@ -1,0 +1,13 @@
+body {
+    padding-top: 70px;
+}
+
+nav{
+    background-color: rgba(255, 245, 233);
+  color: #3e2c23;
+  line-height: 1.6;
+}
+
+.nav-item{
+  background-color: rgb(220, 157, 80);
+}
